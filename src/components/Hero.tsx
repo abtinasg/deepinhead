@@ -9,14 +9,15 @@ export function Hero() {
           1. HERO — Strong headline + Two-product CTAs
       ═══════════════════════════════════════════════════════════════ */}
       <section className="relative min-h-[90vh] flex items-center justify-center pt-20 overflow-hidden">
-        {/* Radial gradient background */}
-        <div className="absolute inset-0 bg-gradient-radial-subtle opacity-60" />
+        {/* Enhanced radial gradient spotlight background */}
+        <div className="absolute inset-0 bg-gradient-radial-hero opacity-80" />
+        <div className="absolute inset-0 bg-gradient-radial-spotlight opacity-60" />
         
         <div className="max-w-6xl mx-auto px-8 py-32 text-center relative z-10">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.1] tracking-tight text-white mb-6 max-w-4xl mx-auto">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.1] tracking-tight text-white mb-6 max-w-4xl mx-auto drop-shadow-lg">
             Premium enterprise tools for finance and research
           </h1>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed mb-12">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed mb-12">
             Two independent products built for clarity, rigor, and long-term thinking.
           </p>
           
@@ -24,14 +25,14 @@ export function Hero() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a 
               href="#finance" 
-              className="group inline-flex items-center gap-2.5 px-8 py-4 bg-amber-500 rounded-full text-base font-medium text-black hover:bg-amber-400 transition-all shadow-xl shadow-amber-500/25 hover:shadow-2xl hover:shadow-amber-500/30"
+              className="group inline-flex items-center gap-2.5 px-8 py-4 bg-amber-500 rounded-full text-base font-medium text-black hover:bg-amber-400 transition-all duration-300 shadow-xl shadow-amber-500/30 hover:shadow-2xl hover:shadow-amber-500/40 glow-finance hover:scale-105"
             >
               Open Finance
               <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </a>
             <a 
               href="#research" 
-              className="group inline-flex items-center gap-2.5 px-8 py-4 border-2 border-white/10 hover:border-white/20 rounded-full text-base font-medium text-white hover:bg-white/5 transition-all"
+              className="group inline-flex items-center gap-2.5 px-8 py-4 border border-subtle hover:border-medium rounded-full text-base font-medium text-white hover:bg-white/8 transition-all duration-300 glow-white-soft hover:scale-105 backdrop-blur-sm"
             >
               Explore Research
               <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
@@ -43,29 +44,29 @@ export function Hero() {
       {/* ═══════════════════════════════════════════════════════════════
           2. PRODUCTS OVERVIEW — Split view Finance/Research
       ═══════════════════════════════════════════════════════════════ */}
-      <section className="bg-elevation-1 border-y border-white/5 py-20">
+      <section className="bg-elevation-1 section-separator py-20">
         <div className="max-w-6xl mx-auto px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
             
             {/* Finance */}
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-radial opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative border border-white/10 rounded-2xl p-8 bg-elevation-2/50 backdrop-blur-sm hover:border-amber-500/30 transition-all">
-                <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-6">
-                  <div className="w-6 h-6 bg-amber-500 rounded-lg" />
+              <div className="relative border border-subtle hover:border-medium rounded-2xl p-8 bg-elevation-card backdrop-blur-sm hover:shadow-2xl hover:shadow-black/20 transition-all duration-300">
+                <div className="w-12 h-12 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center mb-6">
+                  <div className="w-6 h-6 bg-amber-500 rounded-lg shadow-lg" />
                 </div>
                 <h3 className="text-2xl font-semibold text-white mb-3 tracking-tight">
                   Deepin Finance
                 </h3>
-                <p className="text-gray-400 text-base leading-relaxed mb-4">
+                <p className="text-gray-300 text-base leading-relaxed mb-4">
                   Professional platform for structured financial analysis and long-term investing.
                 </p>
-                <p className="text-sm text-gray-500 mb-6">
+                <p className="text-sm text-gray-400 mb-6">
                   • Fundamental analysis with institutional-grade metrics
                 </p>
                 <a 
                   href="#finance" 
-                  className="inline-flex items-center gap-2 text-sm font-medium text-amber-500 hover:text-amber-400 transition-colors group/link"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-amber-400 hover:text-amber-300 transition-colors group/link"
                 >
                   Learn more
                   <ArrowRight className="w-4 h-4 group-hover/link:translate-x-0.5 transition-transform" />
@@ -76,17 +77,17 @@ export function Hero() {
             {/* Research */}
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-radial opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative border border-white/10 rounded-2xl p-8 bg-elevation-2/50 backdrop-blur-sm hover:border-blue-500/30 transition-all">
-                <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-6">
-                  <div className="w-6 h-6 bg-blue-500 rounded-lg" />
+              <div className="relative border border-subtle hover:border-medium rounded-2xl p-8 bg-elevation-card backdrop-blur-sm hover:shadow-2xl hover:shadow-black/20 transition-all duration-300">
+                <div className="w-12 h-12 rounded-xl bg-blue-500/15 border border-blue-500/30 flex items-center justify-center mb-6">
+                  <div className="w-6 h-6 bg-blue-500 rounded-lg shadow-lg" />
                 </div>
                 <h3 className="text-2xl font-semibold text-white mb-3 tracking-tight">
                   Deepin Research
                 </h3>
-                <p className="text-gray-400 text-base leading-relaxed mb-4">
+                <p className="text-gray-300 text-base leading-relaxed mb-4">
                   Long-form research for teams that value rigor over speed.
                 </p>
-                <p className="text-sm text-gray-500 mb-6">
+                <p className="text-sm text-gray-400 mb-6">
                   • Methodology-driven with transparent structure
                 </p>
                 <a 

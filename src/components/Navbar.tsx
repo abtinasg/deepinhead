@@ -3,6 +3,7 @@
 import Link from "next/link";
 import React from "react";
 import { ChevronDown, ArrowRight } from "lucide-react";
+import { Logo } from "./Logo";
 
 export function Navbar() {
   const [productsOpen, setProductsOpen] = React.useState(false);
@@ -12,9 +13,7 @@ export function Navbar() {
       <div className="flex items-center justify-between px-8 py-4 max-w-7xl mx-auto w-full">
         
         {/* Left: Logo */}
-        <Link href="/" className="text-lg font-medium tracking-tight text-white hover:text-gray-300 transition-colors">
-          Deepin
-        </Link>
+        <Logo variant="text" size="md" />
         
         {/* Center: Navigation */}
         <div className="hidden md:flex items-center gap-8">

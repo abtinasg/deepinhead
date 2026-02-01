@@ -1,25 +1,37 @@
 @import "tailwindcss";
 
 :root {
-  /* Softer near-black tones instead of pure black */
-  --background: #0a0a0a;
+  /* Dark charcoal base with sophisticated depth */
+  --background: #0B0F14;
   --foreground: #ffffff;
   
-  /* Enhanced elevation system with better depth */
-  --elevation-base: #0a0a0a;
-  --elevation-1: #111111;
-  --elevation-2: #171717;
-  --elevation-card: #1c1c1c;
+  /* Enhanced elevation system with layered surfaces */
+  --elevation-base: #0B0F14;
+  --elevation-1: #0F1419;
+  --elevation-2: #111827;
+  --elevation-card: #111827;
+  --elevation-raised: #1F2937;
   
-  /* Accent colors */
+  /* Accent colors with enhanced vibrancy */
   --accent-finance: #f59e0b;
   --accent-research: #60a5fa;
   
-  /* Text hierarchy */
+  /* Text hierarchy with improved contrast */
   --text-primary: #ffffff;
-  --text-secondary: #e5e5e5;
-  --text-tertiary: #a3a3a3;
-  --text-muted: #737373;
+  --text-secondary: #f3f4f6;
+  --text-tertiary: #d1d5db;
+  --text-muted: #9ca3af;
+  --text-subtle: #6b7280;
+  
+  /* Border and surface colors */
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-medium: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.2);
+  
+  /* Glow and highlight colors */
+  --glow-finance: rgba(245, 158, 11, 0.15);
+  --glow-research: rgba(96, 165, 250, 0.15);
+  --glow-white: rgba(255, 255, 255, 0.08);
 }
 
 @theme inline {
@@ -52,7 +64,24 @@ body {
   background-color: var(--elevation-card);
 }
 
-/* Subtle noise texture overlay - increased visibility */
+.bg-elevation-raised {
+  background-color: var(--elevation-raised);
+}
+
+/* Sophisticated border system */
+.border-subtle {
+  border-color: var(--border-subtle);
+}
+
+.border-medium {
+  border-color: var(--border-medium);
+}
+
+.border-strong {
+  border-color: var(--border-strong);
+}
+
+/* Enhanced noise texture overlay - increased visibility */
 .bg-noise {
   position: relative;
 }
@@ -62,26 +91,73 @@ body {
   position: absolute;
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  opacity: 0.03;
+  opacity: 0.06;
   pointer-events: none;
   mix-blend-mode: overlay;
+  z-index: 1;
 }
 
-/* Enhanced gradient overlays for depth */
+/* Enhanced gradient overlays for depth and focal points */
 .bg-gradient-subtle-top {
-  background: linear-gradient(to bottom, rgba(255,255,255,0.025) 0%, transparent 50%);
+  background: linear-gradient(to bottom, rgba(255,255,255,0.035) 0%, transparent 50%);
 }
 
 .bg-gradient-subtle-bottom {
-  background: linear-gradient(to top, rgba(255,255,255,0.02) 0%, transparent 40%);
+  background: linear-gradient(to top, rgba(255,255,255,0.025) 0%, transparent 40%);
 }
 
 .bg-gradient-radial {
-  background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%);
+  background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 40%, transparent 70%);
 }
 
 .bg-gradient-radial-subtle {
-  background: radial-gradient(ellipse at center, rgba(255,255,255,0.04) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 50%, transparent 80%);
+}
+
+.bg-gradient-radial-spotlight {
+  background: radial-gradient(ellipse 800px 400px at center, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 40%, transparent 70%);
+}
+
+.bg-gradient-radial-hero {
+  background: radial-gradient(ellipse 1000px 600px at 50% 30%, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 50%, transparent 100%);
+}
+
+/* Glow effects for CTAs and highlights */
+.glow-finance {
+  box-shadow: 0 0 20px var(--glow-finance), 0 0 40px var(--glow-finance);
+}
+
+.glow-research {
+  box-shadow: 0 0 20px var(--glow-research), 0 0 40px var(--glow-research);
+}
+
+.glow-white-soft {
+  box-shadow: 0 0 15px var(--glow-white), 0 0 30px var(--glow-white);
+}
+
+/* Section separators with depth */
+.section-separator {
+  position: relative;
+}
+
+.section-separator::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent 0%, var(--border-subtle) 20%, var(--border-medium) 50%, var(--border-subtle) 80%, transparent 100%);
+}
+
+.section-separator::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent 0%, var(--border-subtle) 20%, var(--border-medium) 50%, var(--border-subtle) 80%, transparent 100%);
 }
 
 /* Diamond clip path for prism shape */
