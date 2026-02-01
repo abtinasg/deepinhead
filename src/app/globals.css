@@ -1,14 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000000;
+  /* Softer near-black tones instead of pure black */
+  --background: #0a0a0a;
   --foreground: #ffffff;
   
-  /* Elevation levels (3-6% brightness steps) */
-  --elevation-base: #000000;
-  --elevation-1: #0a0a0a;
-  --elevation-2: #111111;
-  --elevation-card: #141414;
+  /* Enhanced elevation system with better depth */
+  --elevation-base: #0a0a0a;
+  --elevation-1: #111111;
+  --elevation-2: #171717;
+  --elevation-card: #1c1c1c;
+  
+  /* Accent colors */
+  --accent-finance: #f59e0b;
+  --accent-research: #60a5fa;
+  
+  /* Text hierarchy */
+  --text-primary: #ffffff;
+  --text-secondary: #e5e5e5;
+  --text-tertiary: #a3a3a3;
+  --text-muted: #737373;
 }
 
 @theme inline {
@@ -41,7 +52,7 @@ body {
   background-color: var(--elevation-card);
 }
 
-/* Subtle noise texture overlay */
+/* Subtle noise texture overlay - increased visibility */
 .bg-noise {
   position: relative;
 }
@@ -51,18 +62,26 @@ body {
   position: absolute;
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  opacity: 0.02;
+  opacity: 0.03;
   pointer-events: none;
   mix-blend-mode: overlay;
 }
 
-/* Soft gradient overlays */
+/* Enhanced gradient overlays for depth */
 .bg-gradient-subtle-top {
-  background: linear-gradient(to bottom, rgba(255,255,255,0.015) 0%, transparent 40%);
+  background: linear-gradient(to bottom, rgba(255,255,255,0.025) 0%, transparent 50%);
 }
 
 .bg-gradient-subtle-bottom {
-  background: linear-gradient(to top, rgba(255,255,255,0.01) 0%, transparent 30%);
+  background: linear-gradient(to top, rgba(255,255,255,0.02) 0%, transparent 40%);
+}
+
+.bg-gradient-radial {
+  background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%);
+}
+
+.bg-gradient-radial-subtle {
+  background: radial-gradient(ellipse at center, rgba(255,255,255,0.04) 0%, transparent 70%);
 }
 
 /* Diamond clip path for prism shape */
