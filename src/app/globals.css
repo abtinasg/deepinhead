@@ -1,29 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  /* Premium dark charcoal palette (not pure black) */
-  --background: #0B0F14;
-  --foreground: #E5E7EB;
+  /* Softer near-black tones instead of pure black */
+  --background: #0a0a0a;
+  --foreground: #ffffff;
   
-  /* Surface elevation system */
-  --elevation-base: #0B0F14;
-  --elevation-1: #111827;
-  --elevation-2: #0F172A;
-  --elevation-card: #1E293B;
+  /* Enhanced elevation system with better depth */
+  --elevation-base: #0a0a0a;
+  --elevation-1: #111111;
+  --elevation-2: #171717;
+  --elevation-card: #1c1c1c;
   
   /* Accent colors */
-  --accent-finance: #F59E0B;
-  --accent-research: #60A5FA;
+  --accent-finance: #f59e0b;
+  --accent-research: #60a5fa;
   
   /* Text hierarchy */
-  --text-primary: #F9FAFB;
-  --text-secondary: #E5E7EB;
-  --text-tertiary: #94A3B8;
-  --text-muted: #64748B;
-  
-  /* Additional surface colors */
-  --surface-light: #F8FAFC;
-  --surface-glass: rgba(17, 24, 39, 0.8);
+  --text-primary: #ffffff;
+  --text-secondary: #e5e5e5;
+  --text-tertiary: #a3a3a3;
+  --text-muted: #737373;
 }
 
 @theme inline {
@@ -33,64 +29,10 @@
   --font-mono: var(--font-geist-mono);
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Typography scale */
-.text-display {
-  font-size: clamp(3rem, 5vw, 5rem);
-  line-height: 1.05;
-  letter-spacing: -0.025em;
-  font-weight: 600;
-}
-
-.text-headline {
-  font-size: clamp(2.5rem, 4vw, 4rem);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  font-weight: 600;
-}
-
-.text-subhead {
-  font-size: clamp(1.125rem, 2vw, 1.25rem);
-  line-height: 1.5;
-}
-
-.text-body {
-  font-size: clamp(0.9375rem, 1.5vw, 1rem);
-  line-height: 1.7;
-}
-
-/* Light surface for Finance section contrast */
-.bg-surface-light {
-  background-color: var(--surface-light);
-}
-
-/* Glassy card effect */
-.glass-card {
-  background: var(--surface-glass);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-/* Section padding consistency */
-.section-padding {
-  padding-top: clamp(4rem, 8vw, 8.75rem);
-  padding-bottom: clamp(4rem, 8vw, 8.75rem);
-}
-
-/* 1px dividers */
-.divider-subtle {
-  border-color: rgba(255, 255, 255, 0.06);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Elevation backgrounds */
