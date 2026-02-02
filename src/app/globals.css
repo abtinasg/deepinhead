@@ -1,27 +1,32 @@
 @import "tailwindcss";
 
+* {
+  scroll-behavior: smooth;
+}
+
 :root {
-  /* Dark charcoal base with sophisticated depth */
+  /* Premium dark charcoal base - not pure black */
   --background: #0B0F14;
-  --foreground: #ffffff;
+  --foreground: #E5E7EB;
   
   /* Enhanced elevation system with layered surfaces */
   --elevation-base: #0B0F14;
-  --elevation-1: #0F1419;
-  --elevation-2: #111827;
-  --elevation-card: #111827;
+  --elevation-1: #111827;
+  --elevation-2: #0F172A;
+  --elevation-card: #1E293B;
   --elevation-raised: #1F2937;
+  --elevation-light: #F8FAFC;
   
   /* Accent colors with enhanced vibrancy */
-  --accent-finance: #f59e0b;
-  --accent-research: #60a5fa;
+  --accent-finance: #F59E0B;
+  --accent-research: #60A5FA;
   
   /* Text hierarchy with improved contrast */
-  --text-primary: #ffffff;
-  --text-secondary: #f3f4f6;
-  --text-tertiary: #d1d5db;
-  --text-muted: #9ca3af;
-  --text-subtle: #6b7280;
+  --text-primary: #F9FAFB;
+  --text-secondary: #E5E7EB;
+  --text-tertiary: #94A3B8;
+  --text-muted: #64748B;
+  --text-subtle: #475569;
   
   /* Border and surface colors */
   --border-subtle: rgba(255, 255, 255, 0.06);
@@ -37,14 +42,17 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-inter), var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+  font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Elevation backgrounds */
@@ -79,6 +87,45 @@ body {
 
 .border-strong {
   border-color: var(--border-strong);
+}
+
+/* Utility classes for consistent naming */
+.from-subtle {
+  --tw-gradient-from: var(--border-subtle);
+  --tw-gradient-from-position: 0%;
+  --tw-gradient-to: rgb(from var(--border-subtle) r g b / 0);
+  --tw-gradient-to-position: 100%;
+  --tw-gradient-stops: var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position);
+}
+
+.to-medium {
+  --tw-gradient-to: var(--border-medium);
+  --tw-gradient-to-position: 100%;
+}
+
+.from-medium {
+  --tw-gradient-from: var(--border-medium);
+  --tw-gradient-from-position: 0%;
+  --tw-gradient-to: rgb(from var(--border-medium) r g b / 0);
+  --tw-gradient-to-position: 100%;
+  --tw-gradient-stops: var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position);
+}
+
+.to-strong {
+  --tw-gradient-to: var(--border-strong);
+  --tw-gradient-to-position: 100%;
+}
+
+.divide-subtle > :not([hidden]) ~ :not([hidden]) {
+  border-color: var(--border-subtle);
+}
+
+/* Glassy card effect for premium feel */
+.glass-card {
+  background: rgba(17, 24, 39, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 /* Enhanced noise texture overlay - increased visibility */
